@@ -10,20 +10,22 @@ updates = bot.get_updates(1234,100,20)
 
 @bot.message_handler(commands=['start'])
 def send_introduce(message):
+    hack.flashback_is_active = False
     bot.send_message(message.chat.id, 'Hello, ' + message.chat.first_name +'.')
     bot.send_message(message.chat.id, "I'm Donatella Moss, you can chat with me whenver you want.")
     bot.send_message(message.chat.id, 'Anyway, I can be sometimes busy at work in the West Wing with Josh. So, you\'ll need to wait a little ;)')
     bot.send_message(message.chat.id, 'You can see with /help command, what we can do together')
     bot.send_message(message.chat.id, 'Looking forward to chat with you.')
-    bot.send_message(message.chat.id, 'Donna.')
+    bot.send_message(message.chat.id, 'Donna.',reply_markup = markup.commandmarkup)
 
 
 @bot.message_handler(commands=['help'])
 def help_text(message):
+    hack.flashback_is_active = False
     txt = open('helpfile.txt')
     print (txt)
     helptext = txt.read()
-    bot.send_message(message.chat.id,helptext)
+    bot.send_message(message.chat.id,helptext,reply_markup = markup.commandmarkup)
 
 
 
