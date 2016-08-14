@@ -13,7 +13,11 @@ A perfect character just a few messages away.
 
 ##Available Commands
 
-**/flashback** - Now you can meet Donna for the first time yourself! This initiates flashback from the West Wing 2x02 where Josh meets Donna for the first time. Remember, stick to the script!
+**/flashback** 
+
+Now you can meet Donna for the first time yourself!  
+This command initiates flashback from the West Wing 2x02 where Josh meets Donna for the first time.  
+Remember, stick to the script!
 
 **/quote** 
 
