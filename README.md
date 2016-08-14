@@ -13,6 +13,14 @@ A perfect character just a few messages away.
 
 ##Available Commands
 
+**/start**
+
+Introduce yourself to Donna!
+
+**/help**
+
+Get to know Donna!
+
 **/flashback** 
 
 Now you can meet Donna for the first time yourself!  
@@ -27,9 +35,7 @@ Will be Added
 
 Will be Added
 
-**/help** 
 
-Will be Added
 
 ----
 

@@ -35,7 +35,7 @@ class markup:
     withwhat = types.KeyboardButton('With what?')
     donnabtn = types.KeyboardButton('Donna.')
     goaheadbtn = types.KeyboardButton('Go ahead.')
-    finishbtn = types.KeyboardButton('[You\'re taking your badge holder off your neck and hanging it to Donna, who smiles]')
+    finishbtn = types.KeyboardButton('[You\'re taking your badge holder off your neck and hanging it to Donna, she smiles]')
     skipbtn = types.KeyboardButton('Exit')
     boyfriendolder = types.KeyboardButton('Your boyfriend was older?'
     )
@@ -44,5 +44,6 @@ class markup:
 
 class hack:
     numberofcalls = 0
+    flashback_is_active = False
 
 
