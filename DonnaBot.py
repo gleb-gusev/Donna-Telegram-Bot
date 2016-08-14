@@ -229,7 +229,7 @@ def process_message(message):
         answermarkup.add(markup.finishbtn)
         answermarkup.add(markup.skipbtn)
         bot.send_message(message.chat.id,'[Donna grabs the phone.]',reply_markup=answermarkup)
-        bot.send_message(message.chat.id, '[into phone] Bartlet for America, ' + message.chat.first_name + ' ' + message.chat.last_name + '\'s' +'office. Uh, yes, I think I\'m going to someone from the press office get back to you if it\'s related to -- yes. Uh, yes', reply_markup=answermarkup)
+        bot.send_message(message.chat.id, '[into phone] Bartlet for America, ' + message.chat.first_name + ' ' + message.chat.last_name + '\'s' +' office. Uh, yes, I think I\'m going to someone from the press office get back to you if it\'s related to -- yes. Uh, yes', reply_markup=answermarkup)
 
     elif message.text == ('[You\'re taking your badge holder off your neck and hanging it to Donna, who smiles]'):
         bot.send_message(message.chat.id,
@@ -247,11 +247,10 @@ def process_message(message):
 
     else:
 
-     #bot.send_message(message.chat.id,'Hey, ' + message.chat.first_name + ' stick to the play!')
+        bot.send_message(message.chat.id,'Hey, ' + message.chat.first_name + ' stick to the play!')
 
     # TODO Cover case when user needs to send two answers one by one without calling the statement above
 
-        bot.send_message(message.chat.id,"")
 
 
 
