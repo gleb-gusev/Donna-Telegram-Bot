@@ -1,8 +1,9 @@
 from telebot import types
 
-# Intro Buttons for the Keyboard
 
 class markup:
+    # Intro Buttons for the Keyboard
+
     hibtn = types.KeyboardButton('Hi!')
     whoareyoubtn = types.KeyboardButton('Who are you?', 0)
     yesbtn = types.KeyboardButton('Yes.')
@@ -37,8 +38,18 @@ class markup:
     goaheadbtn = types.KeyboardButton('Go ahead.')
     finishbtn = types.KeyboardButton('[You\'re taking your badge holder off your neck and hanging it to Donna, she smiles]')
     skipbtn = types.KeyboardButton('Exit')
-    boyfriendolder = types.KeyboardButton('Your boyfriend was older?'
-    )
+    boyfriendolder = types.KeyboardButton('Your boyfriend was older?')
+
+    #Command Buttons and MarkUp
+
+    start = types.KeyboardButton('/start')
+    help = types.KeyboardButton('/help')
+    flashback = types.KeyboardButton('/flashback')
+
+    commandmarkup = types.ReplyKeyboardMarkup(row_width=2)
+    commandmarkup.add(start,help,flashback)
+
+
 
 # The whole idea is ugly, but it's 3:33 AM, and I can't think of anything better for now. Will refactor later for sure.
 

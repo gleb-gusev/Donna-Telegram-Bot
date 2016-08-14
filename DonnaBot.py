@@ -274,17 +274,15 @@ def process_message(message):
             hack.flashback_is_active = False
             bot.send_message(message.chat.id,
                              "[into phone] Yes.")
-            bot.send_message(message.chat.id, "End of Play ;) Did you enjoyed it?")
+            bot.send_message(message.chat.id, "End of Play ;) Did you enjoyed it?", reply_markup=markup.commandmarkup)
 
 
         elif message.text == ("Exit"):
+            bot.send_message(message.chat.id,"End of Play. I hope you will get to the end one time...", reply_markup=markup.commandmarkup)
             hack.flashback_is_active = False
 
-            '''
-             # TODO Set Possible Options for Keyboard here or dismiss it.
-
-            '''
     else:
+
         print ('Flashback isn\'t active - Handle this like the ordinary message')
 
 
