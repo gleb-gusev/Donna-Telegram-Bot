@@ -5,7 +5,7 @@ Donatella Moss Telegram Bot
 This is Telegram Bot in Python. 
 Based on https://github.com/eternnoir/pyTelegramBotAPI/
 
-Accessible by https://telegram.me/DonnaMoss_bot
+Accessible by telegram.me/donnatellamoss_bot
 
 A perfect character just a few messages away.
 
