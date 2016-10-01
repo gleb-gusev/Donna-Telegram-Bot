@@ -1,7 +1,7 @@
 from telebot import types
 
 
-class markup:
+class Markup:
     # Intro Buttons for the Keyboard
 
     hibtn = types.KeyboardButton('Hi!')
@@ -53,7 +53,7 @@ class markup:
 
 # The whole idea is ugly, but it's 3:33 AM, and I can't think of anything better for now. Will refactor later for sure.
 
-class hack:
+class Hack:
     numberofcalls = 0
     flashback_is_active = False
 
