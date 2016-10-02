@@ -4,8 +4,13 @@ from telebot import types
 from keyboard import Markup
 from keyboard import Hack
 
+
+# Initialize Raven and Telegram API
+
 client = Client('SENTRY')
 bot = telebot.TeleBot("TELEGRAM API TOKEN")
+
+# Set Updates Retrieving
 
 updates = bot.get_updates(1234,100,20)
 
@@ -27,7 +32,6 @@ try:
 
         Hack.flashback_is_active = False
         txt = open('helpfile.txt')
-        print (txt)
         helptext = txt.read()
         bot.send_message(message.chat.id, helptext, reply_markup = Markup.commandmarkup)
 
@@ -41,13 +45,11 @@ try:
 
     @bot.message_handler(content_types=['text'])
     def process_message(message):
-        print (message.text)
 
         if (message.text == '/flashback'):
             Hack.flashback_is_active = True
 
         if (Hack.flashback_is_active == True):
-            print ('Flashback is active - Acting by the script')
             answermarkup = types.ReplyKeyboardMarkup(row_width=1)
 
             if (message.text == '/flashback'):
@@ -56,7 +58,6 @@ try:
                 bot.send_message(message.chat.id, "Choose option from keyboard to begin", reply_markup=answermarkup)
 
             elif (message.text == 'Hi!'):
-                print(message.text)
                 answermarkup.add(Markup.whoareyoubtn)
                 answermarkup.add(Markup.skipbtn)
                 bot.send_message(message.chat.id, "Hi!", reply_markup=answermarkup)
@@ -290,7 +291,6 @@ try:
 
         else:
 
-            print ('Flashback isn\'t active - Handle this like the ordinary message')
             bot.send_message(message.chat.id, "Ok, I got you. But I don't know what to say on this now...", reply_markup=Markup.commandmarkup)
 
 
