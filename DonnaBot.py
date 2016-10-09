@@ -12,7 +12,7 @@ bot = telebot.TeleBot("TELEGRAM API TOKEN")
 
 # Set Updates Retrieving
 
-updates = bot.get_updates(1234,100,20)
+updates = bot.get_updates(1234,100,40)
 
 try:
 
@@ -317,5 +317,6 @@ def echo_all(message):
 
 '''
 
+# none_stop True/False (default False) - Don't stop polling when receiving an error from the Telegram servers
 
-bot.polling()
+bot.polling(none_stop=True, interval=0)
