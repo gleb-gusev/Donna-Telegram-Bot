@@ -3,12 +3,12 @@ from raven import Client
 from telebot import types
 from keyboard import Markup
 from keyboard import Hack
-
+import random
 
 # Initialize Raven and Telegram API
 
 client = Client('SENTRY')
-bot = telebot.TeleBot("TELEGRAM API TOKEN")
+bot = telebot.TeleBot("TOKEN")
 
 # Set Updates Retrieving
 
@@ -24,7 +24,7 @@ try:
         bot.send_message(message.chat.id, 'Anyway, I can be sometimes busy at work in the West Wing with Josh. So, you\'ll need to wait a little ;)')
         bot.send_message(message.chat.id, 'You can see with /help command, what we can do together')
         bot.send_message(message.chat.id, 'Looking forward to chat with you.')
-        bot.send_message(message.chat.id, 'Donna.', reply_markup = Markup.commandmarkup)
+        bot.send_message(message.chat.id, 'Donna.')
 
 
     @bot.message_handler(commands=['help'])
@@ -33,7 +33,7 @@ try:
         Hack.flashback_is_active = False
         txt = open('helpfile.txt')
         helptext = txt.read()
-        bot.send_message(message.chat.id, helptext, reply_markup = Markup.commandmarkup)
+        bot.send_message(message.chat.id, helptext)
 
 
 
@@ -285,16 +285,22 @@ try:
 
 
             elif message.text == ("Exit"):
-                bot.send_message(message.chat.id,"End of Play. I hope you will get to the end one time...", reply_markup=Markup.commandmarkup)
+                bot.send_message(message.chat.id,"End of Play. I hope you will get to the end one time...")
                 Hack.flashback_is_active = False
                 Hack.numberofcalls = 0
 
         else:
 
-            bot.send_message(message.chat.id, "Ok, I got you. But I don't know what to say on this now...", reply_markup=Markup.commandmarkup)
+           # bot.send_message(message.chat.id, "Ok, I got you. But I don't know what to say on this now...")
 
 
-        # TODO Set up for the text messages with type 'text' so we can get few basic answers behind the script.
+        # TODO Add more quotes to quotes.txt.
+
+            quotesarchive  = open("quotes.txt", "r")
+            quotesarchive = quotesarchive.read().split("[e]")
+            print (len(quotesarchive))
+            bot.send_message(message.chat.id,quotesarchive[random.randrange(0,len(quotesarchive)-1)],reply_markup=None)
+
 
 except Exception as Error:
 
