@@ -35,10 +35,6 @@ try:
         helptext = txt.read()
         bot.send_message(message.chat.id, helptext)
 
-
-
-
-
     # Intro Recreated from the Season 2 In the Shadow of Two Gunmen Part II
 
     @bot.message_handler(commands=['flashback'])
@@ -298,30 +294,12 @@ try:
 
             quotesarchive  = open("quotes.txt", "r")
             quotesarchive = quotesarchive.read().split("[e]")
-            print (len(quotesarchive))
             bot.send_message(message.chat.id,quotesarchive[random.randrange(0,len(quotesarchive)-1)],reply_markup=None)
 
 
 except Exception as Error:
 
     client.captureException()
-
-
-
-
-
-
-#Echoing Function
-
-'''
-
-@bot.message_handler(func=lambda message: True)
-
-def echo_all(message):
-
-        bot.reply_to(message, message.text)
-
-'''
 
 # none_stop True/False (default False) - Don't stop polling when receiving an error from the Telegram servers
 
