@@ -1,11 +1,15 @@
 Donatella Moss Telegram Bot 
+
+*Current version: v1.1.0 Post Hoc, Ergo Propter Hoc*
+
 -----
 ![alt text](http://i58.photobucket.com/albums/g246/sey115/joshdonnathecutestever.gif "Donna")
 
 This is Telegram Bot in Python. 
 Based on https://github.com/eternnoir/pyTelegramBotAPI/
 
-Accessible by https://telegram.me/donnatellamoss_bot
+Get in touch with Donna!
+https://telegram.me/donnatellamoss_bot
 
 A perfect character just a few messages away.
 
@@ -27,13 +31,17 @@ Now you can meet Donna for the first time yourself!
 This command initiates flashback from the West Wing 2x02 where Josh meets Donna for the first time.  
 Remember, stick to the script!
 
-**/quote** 
+**/search**
 
 Will be Added
 
-**/search** 
+## What Donna can do?
 
-Will be Added
+**Quotes**
+
+Just write a message to Donna and get a reply with the favorite quotes.
+
+
 
 
 
