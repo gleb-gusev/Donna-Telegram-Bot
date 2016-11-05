@@ -3,11 +3,16 @@ from raven import Client
 from telebot import types
 from keyboard import Markup
 from keyboard import Hack
+import random
+
+# Initialize Raven and Telegram API
 
 client = Client('SENTRY')
-bot = telebot.TeleBot("TELEGRAM API TOKEN")
+bot = telebot.TeleBot("TOKEN")
 
-updates = bot.get_updates(1234,100,20)
+# Set Updates Retrieving
+
+updates = bot.get_updates(1234,100,40)
 
 try:
 
@@ -19,7 +24,7 @@ try:
         bot.send_message(message.chat.id, 'Anyway, I can be sometimes busy at work in the West Wing with Josh. So, you\'ll need to wait a little ;)')
         bot.send_message(message.chat.id, 'You can see with /help command, what we can do together')
         bot.send_message(message.chat.id, 'Looking forward to chat with you.')
-        bot.send_message(message.chat.id, 'Donna.', reply_markup = Markup.commandmarkup)
+        bot.send_message(message.chat.id, 'Donna.')
 
 
     @bot.message_handler(commands=['help'])
@@ -27,13 +32,8 @@ try:
 
         Hack.flashback_is_active = False
         txt = open('helpfile.txt')
-        print (txt)
         helptext = txt.read()
-        bot.send_message(message.chat.id, helptext, reply_markup = Markup.commandmarkup)
-
-
-
-
+        bot.send_message(message.chat.id, helptext)
 
     # Intro Recreated from the Season 2 In the Shadow of Two Gunmen Part II
 
@@ -41,13 +41,11 @@ try:
 
     @bot.message_handler(content_types=['text'])
     def process_message(message):
-        print (message.text)
 
         if (message.text == '/flashback'):
             Hack.flashback_is_active = True
 
         if (Hack.flashback_is_active == True):
-            print ('Flashback is active - Acting by the script')
             answermarkup = types.ReplyKeyboardMarkup(row_width=1)
 
             if (message.text == '/flashback'):
@@ -56,7 +54,6 @@ try:
                 bot.send_message(message.chat.id, "Choose option from keyboard to begin", reply_markup=answermarkup)
 
             elif (message.text == 'Hi!'):
-                print(message.text)
                 answermarkup.add(Markup.whoareyoubtn)
                 answermarkup.add(Markup.skipbtn)
                 bot.send_message(message.chat.id, "Hi!", reply_markup=answermarkup)
@@ -284,38 +281,26 @@ try:
 
 
             elif message.text == ("Exit"):
-                bot.send_message(message.chat.id,"End of Play. I hope you will get to the end one time...", reply_markup=Markup.commandmarkup)
+                bot.send_message(message.chat.id,"End of Play. I hope you will get to the end one time...")
                 Hack.flashback_is_active = False
                 Hack.numberofcalls = 0
 
         else:
 
-            print ('Flashback isn\'t active - Handle this like the ordinary message')
-            bot.send_message(message.chat.id, "Ok, I got you. But I don't know what to say on this now...", reply_markup=Markup.commandmarkup)
+           # bot.send_message(message.chat.id, "Ok, I got you. But I don't know what to say on this now...")
 
 
-        # TODO Set up for the text messages with type 'text' so we can get few basic answers behind the script.
+        # TODO Add more quotes to quotes.txt.
+
+            quotesarchive  = open("quotes.txt", "r")
+            quotesarchive = quotesarchive.read().split("[e]")
+            bot.send_message(message.chat.id,quotesarchive[random.randrange(0,len(quotesarchive)-1)],reply_markup=None)
+
 
 except Exception as Error:
 
     client.captureException()
 
+# none_stop True/False (default False) - Don't stop polling when receiving an error from the Telegram servers
 
-
-
-
-
-#Echoing Function
-
-'''
-
-@bot.message_handler(func=lambda message: True)
-
-def echo_all(message):
-
-        bot.reply_to(message, message.text)
-
-'''
-
-
-bot.polling()
+bot.polling(none_stop=True, interval=0)
