@@ -9,7 +9,7 @@ This is Telegram Bot in Python.
 Based on https://github.com/eternnoir/pyTelegramBotAPI/
 
 Get in touch with Donna!
-https://telegram.me/donnatellamoss_bot
+https://telegram.me/donnamoss_bot
 
 A perfect character just a few messages away.
 
