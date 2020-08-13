@@ -12,7 +12,7 @@ client = Client('SENTRY')
 
 # Set Updates Retrieving
 
-updates = bot.get_updates(1234,100,40)
+#updates = bot.get_updates(1234,100,40)
 
 try:
 
