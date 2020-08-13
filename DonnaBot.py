@@ -8,7 +8,7 @@ import random
 # Initialize Raven and Telegram API
 
 client = Client('SENTRY')
-bot = telebot.TeleBot("TOKEN")
+#bot = telebot.TeleBot("TOKEN")
 
 # Set Updates Retrieving
 
