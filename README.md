@@ -39,7 +39,7 @@ Will be Added
 
 **Quotes**
 
-Just write a message to Donna and get a reply with the favorite quotes.
+Just write a message to Donna and get a reply with the favorite quotes!
 
 
 
